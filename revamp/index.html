@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Company</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; 
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: black;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar b {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        
+
+.header-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115%;
+    object-fit: cover;
+    z-index: -1; 
+}
+
+
+.header {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-image: url('black-background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.header-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.header-logo img {
+    width: 219px;
+    height: 56px;
+    margin-top: 55px;
+    margin-left: 220px;
+}
+
+.header-content {
+    margin-top: 60px;
+}
+
+.header-content h2
+{
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-shadow: #000 0 1px 1px;
+    line-height: 54px;
+    margin-left: 30px;
+
+    font-family: 'Lato', sans-serif;
+}
+
+.header-description {
+    font-size: 19px;
+    color: #ff8c20e1;
+    font-weight: 600;
+    margin-top: 10px;
+    font-style: italic;
+    letter-spacing: 2px;
+
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* arrow */
+.header-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #ff8c20e1;
+    transform: translateX(-50%);
+    animation: bounceDown 1s infinite;
+}
+
+@keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(20px);
+    }
+    60% {
+        transform: translateY(10px);
+    }
+}
+
+
+  
+        /* About section */
+        .about-section {
+            padding: 5px 20px;
+            text-align: left;
+            margin-top: 130px; 
+            margin-bottom: 30px;
+        }
+
+        .about-section h2 {
+            font-size: 41px;
+            margin-bottom: 22px;
+            margin-left: 200px;
+            margin-right: 200px;
+            color: #000;
+            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+        }
+        .about-section h3 {
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            margin-left: 200px;
+            margin-right: 200px;            
+            color:  #ff8c20e1;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: 'Lato', sans-serif;
+
+        }
+
+        .about-section p {
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-left: 200px;
+            margin-right: 200px;
+            color:  #2b2d2be1;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .about-section img {
+            width: 1100px;
+            height: 300px;
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-bottom: 10px;
+        }
+
+/* What We Do section*/
+.nw-section {
+    background-color: #141313; 
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: flex-start; 
+    margin: 0 -10px; 
+}
+.what-we-do-section {
+    background-color: #141313; 
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: flex-start; 
+    color: white;
+    margin: 0 100px; 
+}
+
+.card-container {
+    width: calc(25% - 20px); 
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #1f1f1f; 
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none; 
+    margin: 0 10px; 
+}
+
+.card:hover {
+    transform: scale(1.05); 
+    background-color: #ff8c20e1; 
+}
+
+.what-we-do-section h3{
+    font-size: 27px; 
+    font-weight: 300;
+    color: white; 
+    margin-right:1100px; 
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 1px;
+    margin-left: 25px;
+}
+.what-we-do-section h1 {
+    font-size: 46px; 
+    font-weight: 900;
+    color: white; 
+    margin-right:1000px; 
+    font-family: 'Lato', sans-serif;
+    margin-top: -10px;
+    margin-left:5px
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0; 
+    color: white; 
+    font-family: 'Lato', sans-serif;
+}
+
+.card h3 {
+    font-size: 18px; 
+    font-weight: 300; 
+    display: block;
+    margin: 0;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.card p {
+    font-size: 12px;
+    font-weight: 400; 
+    letter-spacing: 0.5px; 
+    margin-top: 35px; 
+    margin-bottom: 10px; 
+    font-family: 'Lato', sans-serif;
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    width: 1px; 
+    height: 45%;
+    background-color: white; 
+    content: "";
+}
+
+.card a {
+    color: white;
+    text-decoration: none;
+    margin-top: auto; 
+    font-family: 'Lato', sans-serif;
+    font-size: 15px; 
+    transition: color 0.2s;
+    font-weight: 400; 
+}
+.card-number {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #1f1f1f; 
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.card:hover a {
+    color: #1f1f1f; 
+}
+
+
+.fact-section {
+    display: flex;
+    padding: 0; 
+    position: relative;
+    text-align: left; 
+}
+
+
+.left-bg {
+    flex: 1; 
+    background: linear-gradient(to right, #FF6B6B, #FFAA64);
+    padding: 2rem; 
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    
+    text-align: left;
+}
+
+
+.right-bg {
+    flex: 1; 
+    background-color: white;
+    padding: 2rem; 
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    
+    text-align: left;
+}
+
+
+.fact-section h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 1000;
+    margin-left: 60px;
+}
+
+
+.fact-section h2 {
+    font-size: 35px;
+    margin-top: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-bottom: -35px;
+    margin-left: 60px;
+
+}
+.fact-section h3 {
+    font-size: 25px;
+    margin-top: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
+    font-style: italic;
+    color: #505050;
+    margin-bottom: 10px;
+    margin-left: 60px;
+
+
+
+}
+
+
+
+.fact-section p {
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 30px;
+    margin-bottom: -10px;
+    font-style: italic;
+}
+
+
+.client-image {
+    width: 80px;
+    height: 80px;
+    background-color:#ff8c20e1;
+    border-radius: 60%;
+    
+    margin-right: 30px;
+    margin-left: 60px;
+}
+
+.client-review {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.client-review h1 {
+    font-size: 1rem;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    margin-right: -40px;
+}
+
+
+.client-review p {
+
+    color: #808080;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+
+.scroll-arrows {
+
+  
+    font-size: 5rem;
+    margin-left: 75%;
+    margin-bottom: -50px;
+    margin-top: -60px;
+}
+
+
+.scroll-arrows button:nth-child(1) {
+    background: white;
+    border: black;
+    cursor: pointer;
+}
+
+
+.scroll-arrows button:nth-child(2) {
+    background: white;
+    border: black;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.card-container {
+    border: none;
+}
+
+
+.mem-and-asos-section {
+    background-color: white;
+    padding: 100px 0; 
+    text-align: center;
+
+}
+
+.section-heading {
+    font-size: 40px;
+    margin-bottom:50px;
+    margin-top: -10px;
+    margin-left: 150px;
+    font-weight: 800;
+    color: #000;
+    line-height: 34px;
+
+    display: flex;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    
+
+}
+
+.mem-and-asos-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap;
+  
+    margin-left: 150px;
+}
+
+
+.mem-and-asos-content img {
+    max-width: 200px; 
+    margin: 30px; 
+  
+}
+
+
+.mem-and-asos-content p {
+    font-size: 20px;
+    margin-top: 70px;
+
+    text-align: center;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #1e1d1d;
+    margin-left: 160px;
+    margin-right:250px ;
+
+}
+
+
+
+.work-with-us-section {
+    background-color: #1c1c1c;
+    padding: 100px 0;
+    text-align: left; 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.work-with-us-container {
+    border: 1px solid gray;
+    border-radius: 3px;
+    width: 30%; 
+    box-sizing: border-box;
+    padding: 30px;
+    margin-right: 30px; 
+    margin-left: 200px;
+}
+
+/* Style the form */
+.work-with-us-form h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 15px; 
+}
+
+/* Style the input fields and labels */
+.form-group label.required::after {
+    content: '*';
+    color: #ff8c20e1;
+    margin-left: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 90%; 
+    padding: 15px;
+    border: 1px solid #cbcaca;
+    border-radius: 1px;
+    font-size: 14px;
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid white;
+
+}
+
+.form-group input[type="file"] + label {
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.form-group input[type="submit"] {
+    background-color:#ff8c20e1; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 280px;
+}
+
+
+.work-with-us-lists {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -300px; 
+    width: 40%; 
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+.work-with-us-list {
+    flex: 1;
+    text-align: left;
+}
+
+.work-with-us-list h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.work-with-us-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.work-with-us-list li {
+    font-size: 16px;
+    margin-bottom: 10px; 
+    line-height: 25px;
+    font-family: 'Lato', sans-serif;
+    color: #5C5C5B;
+}
+
+/* Add this CSS code for the footer */
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+}
+
+.footer-left p,
+.footer-center p,
+.footer-right a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-left p::before {
+    content: "\00a9 "; /* Copyright symbol */
+}
+
+.footer-right a + a::before {
+    content: " | ";
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+   
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">About</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Gallery</a>
+    <a href="#">Services</a>
+    <a href="#">Home</a>
+    <b href="#"> Company Name</b>
+</div>
+
+
+<div class="header">
+    <div class="header-background">
+        <img src="b3.0.jpg" alt="Header Background Image">
+    </div>
+    <div class="header-logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+   
+    <div class="header-content">
+        <p class="header-description">Inspired by Ideas & Technology.</p>
+        <h2>We create ultimate <br>user experience for businesses globally</h2>
+    </div>
+  
+    <div class="header-arrow"></div>
+</div>
+
+
+<div class="about-section">
+    <h2>ABOUT US</h2>
+    <p>XYZ Ltd. is a growing IT Company that has been established since 2015. 
+        Years of experience has enabled our company and its people to master the art of digital marketing. 
+        Our workplaces in USA, China, Pakistan, UAE and South Korea are full of competent individuals who are genuinely committed to help our company prosper all over the globe. 
+        Our cooperative and well-learned leaders are the driving force behind the company’s success. 
+        It is, thus, our people and their intellect that has made it possible for us to grow this far. In a very short span of time we stand among the Top 10 IT Companies in Pakistan..</p>
+    <h3>Company philosophy: </h3>
+<p>Our passion is the main force that drives us into performing well for Abtach. We love what we do and that’s why, we’ve strengthened our ties with IT enthusiasts who are genuinely committed to take this company to the peak of its success.
+     We believe in respecting our people’s rights and privacy and that leads us into ensuring a win-win situation for our company and its people.</p>
+    
+    
+    <img src="b2.jpg" alt="Image Description" >
+
+</div>
+<!--  the About section -->
+<div class="nw-section">
+<div class="what-we-do-section">
+    
+    <h3> WHAT </h3>
+    <h1>WE DO</h1>
+    <br>
+
+    
+    <div class="card-container">
+       
+        <div class="card">
+               <div class="card-content">
+                
+                <h3>Graphic</h3>
+                <h2>Designing</h2>
+                <p>Graphic Designing is our forte. Our design teams are located across the globe with a mission to leave a lasting impact on the corporate world, we bring our skilled artists to earn your brand the name it deserves..</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">01</div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+               
+                <h3>Web Design &</h3>
+                <h2>Development</h2>
+                <p>ABTACH Ltd. has a team of proficient web designers and developers. It is the diligence of our developers that has enabled us to be best at providing digital services. We derive dynamic designs for brands worldwide..</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">02</div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                
+                <h3>Mobile App</h3>
+                <h2>Development</h2>
+                <p>The key to our success has always been our people. Innovative solutions and unprecedented skill set enables us to build award-winning apps, adding significant value to the organization. We strive to revolutionize app experiences for audiences globally.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">03</div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                
+                <h3>Social Media</h3>
+                <h2>Management</h2>
+                <p>Our team knows how significant marketing is for your business. The Social Media Executives at ABTACH Ltd. are well-aware of the dos and don’ts of Social Media Marketing. Our executives thrive at managing social media channels..</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">04</div>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h3>Content</h3>
+                <h2>Management
+                </h2>
+               
+                <p>We have exceptional individuals in our Content Management department who deliver genuine content for your business. Our writers have produce some of the most strategically sound content over the years, achieving great success along the way</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">05</div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                
+                <h3>Search Engine</h3>
+                <h2>Optimization</h2>
+                <p>Over the years our SEO Engineers have developed a seamless mechanism to gain top ranks for businesses, on the leading search engines. With our result-oriented approach, we have managed to produce results over and over again.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">06</div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                
+
+                <h3>Video</h3>
+                <h2>Animation</h2>
+                <p>Video Animators at ABTACH Ltd. Transform lifeless images into lively and engaging ones. These include Whiteboard Animations, 2D Explainer and Graphic Videos which prove to be great when it comes to selling your product</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">07</div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                
+                <h3>Digital</h3>
+                <h2>Marketing</h2>
+                <p>Our Marketers are specialists who keep a record of the changing trends of the tech world. With ethical approach to branding, these individuals work tirelessly to market your brand well enough to overthrow your competition</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card-number">08</div>
+        </div>
+    </div>
+    
+</div>
+</div>
+<div class="fact-section">
+    <div class="column">
+        <div class="left-bg">
+            <h2>We Love To Share</h2>
+            <h1>Our Facts.</h1>
+            <p>xyzLtd. has achieved the status of the fastest emerging IT Company in Pakistan in a very short span of time. Our Company has experienced a fleeting success in its new and long-established ventures landing us with more business and growing profit margins each year.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <p>Started in</p>
+                        <h1>2015</h1>
+                    </td>
+                    
+                    <td>
+                        <p>Specialist Teams</p>
+                        <h1>10</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Offices Worldwide</p>
+                        <h1>Five</h1>
+                    </td>
+                    <td>
+                        <p>Team Of</p>
+                        <h1>1500+</h1>
+                        
+                    </td>
+                </tr>
+               
+            </table>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="right-bg">
+            <h2>Clients</h2>
+            <h1>about us.</h1>
+            <h3>happy clients and their reviews</h3>
+            <p>Over the years, ABTACH Ltd. has served many and inspired even more. With customer satisfaction as our foremost preference, our company digitizes workflow, encourages effective communication and works to save time. Here is what our clients say about us!</p>
+
+            <div class="client-review">
+                <div class="client-image"></div>
+                <h1>WALK EAZE</h1>
+                <p>XYZLtd. has impressive people who turned up with all my projects in time. Their professional attitude towards customer dealing was definitely commendable.
+                </p>
+            </div>
+
+            <div class="client-review">
+                <div class="client-image"></div>
+                <h1>WANG LI</h1>
+                <p>These guys are doing some amazing work! I worked with them for 6 months and in that short time, they really helped me through all the digital marketing issues  
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+       
+        
+        <div class="scroll-arrows">
+            <button>&#8592;</button>
+            <button>&#8594;</button>
+        </div>
+    </div>
+</div>
+
+<div class="mem-and-asos-section">
+  
+        <h1 class="section-heading">Memberships & Associations</h1>
+        <div class="mem-and-asos-content">
+        <img src="pasha.png" alt="Logo 1">
+        <img src="pseb.png" alt="Logo 2">
+        <p>We strive to establish XYZLtd. as a leading service provider in the global tech arena. As a team of dedicated individuals, we have constructed a vision with challenging goals; to inspire the people to give their best through complete commitment to their passion.</p>
+    </div>
+</div>
+
+<div class="work-with-us-section">
+    <div class="work-with-us-container">
+        <div class="work-with-us-form">
+            <h1>Work With Us</h1>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label class="required" for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone No</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label class="required" for="file-upload">Choose File</label>
+                    <input type="file" id="file-upload" name="file-upload" accept=".pdf,.doc,.docx">
+                    <label for="file-upload" data-file-name="No file chosen"></label>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="SUBMIT">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="work-with-us-lists">
+        <div class="work-with-us-list">
+            <h1>Our Services</h1>
+            <ul>
+                <li>- Graphic Designing</li>
+<li>- Web Design & Development</li>
+<li>- App Development</li>
+<li>- Video Animation</li>
+<li>- Social Media Management</li>
+<li>- Content Management</li>
+<li>- Search Engine Optimization</li>
+<li>- Digital Marketing</li>
+            </ul>
+        </div>
+        <div class="work-with-us-list">
+            <h1>Quick Links</h1>
+            <ul>
+                <li>- Graphic Designing</li>
+<li>- Who We Are</li>
+<li>- Our Services</li>
+<li>- Careers</li>
+<li>- Portfolio</li>
+<li>- Contact Us</li>
+<li>- Privacy Policy</li>
+<li>- Terms Of Use</li>
+<li>- Refund Policy</li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- footer section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <p>&copy; 2023 Your Company. All Rights Reserved.</p>
+        </div>
+        <div class="footer-center">
+            <p>Your Company Name</p>
+        </div>
+        <div class="footer-right">
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-use.html">Terms of Use</a> |
+            <a href="refund-policy.html">Refund Policy</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>
